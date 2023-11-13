@@ -1,0 +1,15 @@
+.hold-button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.hold-button-container button{
+    cursor: pointer;
+}
+
+.hold-button-status{
+    height: 6px;
+    background-color: rgb(224, 102, 102);
+    border-radius: 3px;
+}

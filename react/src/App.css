@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    width: 100vw;
+    text-align: center;
+}
+
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.game button, .turns button {
+    padding: 0;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap: 10px;
+    justify-content: center;
+    padding: 1rem;
+    border: solid 2px;
+    position: relative;
+}
+
+.new-game button{
+    user-select: none;
+}
+
+.turns{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.is-selected{
+    background-color: lightpink;
+    color: #333;
+}
+
+.cell{
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+    border: 2px solid ;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+}
+
+.game .no-winner{
+    filter: grayscale() brightness(0.4);
+}
+
+.game .winner{
+    background-color: lightcoral;
+}
+
+.game .cell {
+    cursor: pointer;
+}
