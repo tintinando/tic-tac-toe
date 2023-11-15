@@ -1,14 +1,14 @@
 import { HoldButton } from './holdButton'
 import '../App.css'
 import { Square } from './Square'
+import { useState } from 'react'
 
-export function GameFooter ({ game, gameState, setBoard, setGameState }) {
-  const customIcons = game.current.getCustomIcons()
+export function GameFooter ({ gameState, newGame }) {
+  const customIcons = gameState.customIcons
+  const [keepIcons, setKeepIcons] = useState(false)
 
   const handleNewGame = () => {
-    game.current.newGame()
-    setBoard(game.current.getBoard())
-    setGameState(game.current.getState())
+    newGame({ redefineIcons: !keepIcons })
   }
 
   return (
@@ -29,6 +29,14 @@ export function GameFooter ({ game, gameState, setBoard, setGameState }) {
         <HoldButton onClick={handleNewGame} time={200}>
           Nuevo juego
         </HoldButton>
+        <label>
+          Mantener íconos
+          <input
+            type='checkbox'
+            value={keepIcons}
+            onChange={() => setKeepIcons(prev => !prev)}
+          />
+        </label>
       </section>
     </>
   )

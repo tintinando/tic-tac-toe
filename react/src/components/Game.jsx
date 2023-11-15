@@ -1,15 +1,13 @@
 import { Square } from './Square'
 
-export function Game ({ game, board, setBoard, gameState, setGameState }) {
+export function Game ({ gameState, doMove }) {
   const handleClick = (index) => {
-    game.current.doMove(index)
-    setBoard(game.current.getBoard())
-    setGameState(game.current.getState())
+    doMove(index)
   }
 
   return (
     <div className='game'>
-      {board.map((e, index) => {
+      {gameState.board.map((e, index) => {
         const winnerCell = gameState.winnerShape.some(e => e === index)
         return (
           <Square
